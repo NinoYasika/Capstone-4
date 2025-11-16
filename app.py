@@ -6,12 +6,14 @@ from ultralytics import YOLO
 import re
 import cv2
 
-# ---- FIX PYTORCH 2.9 LOADER ----
-torch.serialization.add_safe_globals([__import__("ultralytics").nn.tasks.DetectionModel])
+# ---- FIX PYTORCH LOADER UNTUK CUSTOM LAYER ----
+from ultralytics.nn.tasks import DetectionModel
+torch.serialization.add_safe_globals([DetectionModel])
 
-# ---- Load YOLO Model ----
-MODEL_PATH = "best.pt"  # ganti sesuai path
-model = YOLO(MODEL_PATH)
+# ---- Load YOLO Model dari repo ----
+MODEL_PATH = "best.pt"  # pastikan best.pt ada di root repo
+ckpt = torch.load(MODEL_PATH, map_location="cpu")  # load checkpoint
+model = YOLO(ckpt)
 
 st.set_page_config(page_title="YOLO Food Calorie Detector", layout="wide")
 st.title("🍔 YOLO Food Calorie Detector")
