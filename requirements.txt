@@ -1,0 +1,11 @@
+ultralytics==8.2.103
+torch==2.9.1
+torchvision==0.24.1
+opencv-python-headless==4.9.0.80
+numpy
+pillow
+matplotlib
+streamlit
+tqdm
+pandas
+albumentations

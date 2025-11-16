@@ -1,0 +1,5 @@
+[theme]
+# Ini adalah bagian yang akan mencoba mengatur versi Python yang digunakan oleh Streamlit
+# Walaupun Streamlit Cloud tidak selalu mematuhi ini secara langsung untuk Python,
+# ini menunjukkan preferensi lingkungan.
+# Jika ini tidak bekerja, kita harus mengandalkan file packages.txt (Langkah 2)
