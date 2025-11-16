@@ -10,7 +10,7 @@ import cv2
 torch.serialization.add_safe_globals([__import__("ultralytics").nn.tasks.DetectionModel])
 
 # ---- Load YOLO Model ----
-MODEL_PATH = "runs/detect/train/weights/best.pt"  # ganti sesuai path
+MODEL_PATH = "/content/drive/MyDrive/Capstone-4/best.pt"  # ganti sesuai path
 model = YOLO(MODEL_PATH)
 
 st.set_page_config(page_title="YOLO Food Calorie Detector", layout="wide")
